@@ -1,6 +1,7 @@
 
+
 /venv/
 
-/.idea/*
-
+# Ignore idea files
+/.idea/
 

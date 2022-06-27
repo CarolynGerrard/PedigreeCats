@@ -12,11 +12,10 @@ class Cat_Details(BaseModel):
     dob: date = Field(example="2014-06-21")
     gems_code: Optional[str] = Field(example="SRLd03")
 
-
-    @validator('gems_code')
+    @validator("gems_code")
     def validate_gems_code(cls, v) -> str:
         if v and len(v) < 4:
-            raise ValueError(f"Invalid gems_code: {v}\nPlease go to https://www.gccfcats.org/wp-content/uploads/2022/01/GEMS-Codes.9Nov21.pdf for more information")
+            raise ValueError(
+                f"Invalid gems_code: {v}\nPlease go to https://www.gccfcats.org/wp-content/uploads/2022/01/GEMS-Codes.9Nov21.pdf for more information"
+            )
         return v
-
-

@@ -26,9 +26,15 @@ async def custom_form_validation_error(request, exc):
     return JSONResponse(
         status_code=status.HTTP_400_BAD_REQUEST,
         content=jsonable_encoder(
-            {"type": "invalid-request", "title": "One or more validation errors occurred.",
-             "message": {"location": {pydantic_error['loc'][0]}, "field": {pydantic_error['loc'][1]}},
-             "detail": reformatted_message}
+            {
+                "type": "invalid-request",
+                "title": "One or more validation errors occurred.",
+                "message": {
+                    "location": {pydantic_error["loc"][0]},
+                    "field": {pydantic_error["loc"][1]},
+                },
+                "detail": reformatted_message,
+            }
         ),
     )
 

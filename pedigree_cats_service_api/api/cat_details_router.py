@@ -19,8 +19,11 @@ async def update_item(cat_details_id: int, cat_details: cat_details.Cat_Details)
     try:
         fake_db.cats.update({cat_details_id: cat_details})
     except Exception as e:
-        raise HTTPException(status_code=400, detail=[ErrorWrapper(e, ("body", cat_details_id))], body=cat_details)
+        raise HTTPException(
+            status_code=400,
+            detail=[ErrorWrapper(e, ("body", cat_details_id))],
+            body=cat_details,
+        )
     finally:
         print(fake_db.cats)
     return cat_details
-

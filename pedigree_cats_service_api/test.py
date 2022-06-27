@@ -1,5 +1,3 @@
-
-
 #
 # def gen_int(n):
 #     for i in range(n):
@@ -11,13 +9,15 @@
 #             yield n
 #
 
+
 def fib():
     a, b = 0, 1
     while 1:
-       yield b
-       a, b = b, a+b
+        yield b
+        a, b = b, a + b
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     fib()
 
     #
