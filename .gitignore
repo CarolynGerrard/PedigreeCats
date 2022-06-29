@@ -3,7 +3,7 @@
 /venv
 
 # Ignore idea files
-
+.idea
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
