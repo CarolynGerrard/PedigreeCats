@@ -18,8 +18,6 @@ RUN pip install --no-cache-dir --upgrade -r requirements.txt
 # Copy everything from ./src directory to /app in the container
 COPY ./app /code/app
 
-# Run the application in the port 8000
-#CMD ["uvicorn", "app.main:app", "--host", "127.0.0.1", "--port", "8000" ]
 
 
 
