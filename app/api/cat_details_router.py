@@ -3,8 +3,8 @@ from http.client import HTTPException
 from fastapi import APIRouter
 from pydantic.error_wrappers import ErrorWrapper
 
-from pedigree_cats_service_api.db import fake_db
-from pedigree_cats_service_api.model import cat_details
+from app.db import fake_db
+from app.model import cat_details
 
 router = APIRouter(prefix="/cat_details")
 

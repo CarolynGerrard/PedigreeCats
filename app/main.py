@@ -7,7 +7,7 @@ from fastapi.exceptions import RequestValidationError
 from starlette import status
 from starlette.responses import JSONResponse
 
-import pedigree_cats_service_api.api.cat_details_router as cat_details_router
+import app.api.cat_details_router as cat_details_router
 
 app = FastAPI()
 app.include_router(cat_details_router.router)
@@ -40,4 +40,4 @@ async def custom_form_validation_error(request, exc):
 
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="127.0.0.1", port=8000)

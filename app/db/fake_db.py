@@ -4,7 +4,7 @@ cats = {
         "name": "Dumpling",
         "coat_colour": "Black",
         "coat_type": "Curly",
-        "dob": "21-06-2014",
+        "dob": "2014-06-20",
         "gems_code": "SRLd",
     }
 }
