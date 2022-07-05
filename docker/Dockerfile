@@ -10,13 +10,13 @@ EXPOSE 8000
 WORKDIR /code
 
 # Copy requirements from host, to docker container in /app
-COPY ./requirements.txt /code/requirements.txt
+COPY ../requirements.txt /code/requirements.txt
 
 # Install the dependencies
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 # Copy everything from ./src directory to /app in the container
-COPY ./app /code/app
+COPY ../app /code/app
 
 
 
