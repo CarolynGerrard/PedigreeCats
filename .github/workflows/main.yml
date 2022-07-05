@@ -33,7 +33,10 @@ jobs:
       - name: docker-compose build
         run: |
           ls -al
-          docker-compose -f docker/docker-compose.yml -t ${{ secrets.DOCKER_USER }}/pedigree-cats-service build
+          docker-compose -f docker/docker-compose.yml build
+      - name: docker tag image
+        run: |
+          docker tag pedigree-cat-services ${{ secrets.DOCKER_USER }}/pedigree-cats-service
       - name: docker push
         run: |
           docker-compose -f docker/docker-compose.yml push
