@@ -16,7 +16,7 @@ COPY ./requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 # Copy everything from ./src directory to /app in the container
-COPY ../app /code/app
+COPY ./app /code/app
 
 
 
