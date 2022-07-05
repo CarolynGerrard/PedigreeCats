@@ -31,8 +31,8 @@ jobs:
           echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
       # Runs a single command using the runners shell
       - name: docker-compose build
-        cd: docker
         run: |
+          cd docker
           docker-compose build
       - name: docker push
         run: |
