@@ -6,7 +6,7 @@ services:
       # Make the project dir the context for the build.
       context: ..
       dockerfile: docker/Dockerfile
-    image: pedigree_cats_service
+    image: pedigree-cats-service
     command:  uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
     ports:
       - 8000:8000
