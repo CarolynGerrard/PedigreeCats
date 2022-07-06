@@ -28,7 +28,7 @@ jobs:
           DOCKER_USER: ${{ secrets.DOCKER_USER }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
         run: |
-          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
+          echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USER} --password-stdin
       # Runs a single command using the runners shell
       - name: docker-compose build
         run: |
@@ -36,7 +36,7 @@ jobs:
           docker-compose -f docker/docker-compose.yml build
       - name: docker tag image
         run: |
-          docker tag pedigree-cat-services ${{ secrets.DOCKER_USER }}/pedigree-cats-service
+          docker tag pedigree-cat-services ${DOCKER_USER}/pedigree-cats-service
       - name: docker push
         run: |
-          docker-compose -f docker/docker-compose.yml push
+          docker push ${DOCKER_USER}/pedigree-cats-service

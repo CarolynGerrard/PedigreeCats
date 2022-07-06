@@ -8,9 +8,9 @@ then
 	docker rm ${CONTAINER}	
 fi
 
-docker build -t ${CONTAINER_NAME} .
+docker-compose -f docker/docker-compose.yml build
 
-docker-compose up > ../logs/pedigree-cats-service.log
+docker-compose -f docker/docker-compose.yml up > logs/pedigree-cats-service.log
 
 
 

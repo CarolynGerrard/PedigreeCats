@@ -11,8 +11,8 @@ services:
     ports:
       - 8000:8000
     networks:
-      - test_network
+      - pedigree-cats-service_network
 
 networks:
-  test_network:
+  pedigree-cats-service_network:
     driver: bridge
