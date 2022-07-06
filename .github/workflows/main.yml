@@ -36,7 +36,7 @@ jobs:
           docker-compose -f docker/docker-compose.yml build
       - name: docker tag image
         run: |
-          docker tag pedigree-cat-services ${DOCKER_USER}/pedigree-cats-service
+          docker tag pedigree-cat-services ${{ DOCKER_USER }}/pedigree-cats-service
       - name: docker push
         run: |
-          docker push ${DOCKER_USER}/pedigree-cats-service
+          docker push ${{ DOCKER_USER }}/pedigree-cats-service
