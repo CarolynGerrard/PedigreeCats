@@ -27,7 +27,7 @@ jobs:
        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: docker login
-               run: |
+        run: |
           echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USER} --password-stdin
       # Runs a single command using the runners shell
       - name: docker-compose build
